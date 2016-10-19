@@ -1,28 +1,51 @@
 class tresEnRaya{
     constructor(){
-        var cas1 == 0
-        var cas2 == 0
-        var cas3 == 0
-        var cas4 == 0
-        var cas5 == 0
-        var cas6 == 0
-        var cas7 == 0
-        var cas8 == 0
-        var cas9 == 0
-        document.getElementById("cosa").innerHTML += ('<table border=”0” cellspacing=”2” bgcolor=”black”>');
-        for (i=0;i<3;i++){
-            document.getElementById("cosa").innerHTML += ('<tr bgcolor="white" height="20">')
-         
-            for(j=0;j<3;j++){
-                document.getElementById("cosa").innerHTML += ('<td width="20 bgcolor="white"> &nbsp;</td>');        
-            };
-            document.getElementById("cosa").innerHTML += ('</tr>');            
+        this.turno = 1;
+        this.casillas = [this.cas1 = 1,
+        this.cas2 = 2,
+        this.cas3 = 3,
+        this.cas4 = 4,
+        this.cas5 = 5,
+        this.cas6 = 6,
+        this.cas7 = 7,
+        this.cas8 = 8,
+        this.cas9 = 9];
+        
+        
+    }
+    
+    cuentaTurno(){
+        this.turno++
+    }
+    
+    asignaCasilla(casilla){
+        if (this.turno%2 ==1){
+            this.casillas[casilla-1] = 1;
+        } else{
+            this.casillas[casilla-1] = 2;
         };
+        this.cuentaTurno();
+        this.compruebaResultado();
+    }
+    
+    compruebaResultado(){
+       this.di = document.getElementById("cosa");
+       this.di.innerHTML += this.casillas+'<br/>';
+       this.di.innerHTML += 'turno'+this.turno+'<br/>';
+        
+        if(this.casillas[0] == this.casillas[1] == this.casillas[2] || this.casillas[3] == this.casillas[4] == this.casillas[5] || this.casillas[6] == this.casillas[7] == this.casillas[8] || this.casillas[0] == this.casillas[4] == this.casillas[8] || this.casillas[6] == this.casillas[4] == this.casillas[2] || this.casillas[0] == this.casillas[3] == this.casillas[6] || this.casillas[1] == this.casillas[4] == this.casillas[7] || this.casillas[2] == this.casillas[5] == this.casillas[8]){
+            alert('ganador 1')
+            
+        }
+    }
 
-        document.getElementById("cosa").innerHTML += ('</table>')
-    };
-    
-    
 }
-
 tic = new tresEnRaya();
+tic.compruebaResultado();
+
+tic.asignaCasilla(5);
+tic.asignaCasilla(1);
+tic.asignaCasilla(4);
+tic.asignaCasilla(8);
+tic.asignaCasilla(6);
+tic.compruebaResultado();
