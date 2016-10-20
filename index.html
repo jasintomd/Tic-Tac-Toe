@@ -4,10 +4,60 @@
   <head>
     <meta charset="UTF-8"> 
       <title>Tic-Tac.... Tres en Raya</title>
+          <script src="modelo.js"></script>  
+
   </head>
   <body>
     <div id="cosa">
-    <script src="ws3.3.js"></script>  
+        
+        <table id="tabla">
+            <tr>
+                <td id="cas1" onclick="tic.asignaCasilla(cas1, 1)"></td>
+                <td id="cas2" onclick="tic.asignaCasilla(cas2, 2)"></td>
+                <td id="cas3" onclick="tic.asignaCasilla(cas3, 3)"></td>
+            </tr>
+            <tr>
+                <td id="cas4" onclick="tic.asignaCasilla(cas4, 4)"></td>
+                <td id="cas5" onclick="tic.asignaCasilla(cas5, 5)"></td>
+                <td id="cas6" onclick="tic.asignaCasilla(cas6, 6)"></td>
+            </tr>
+            <tr>
+                <td id="cas7" onclick="tic.asignaCasilla(cas7, 7)"></td>
+                <td id="cas8" onclick="tic.asignaCasilla(cas8, 8)"></td>
+                <td id="cas9" onclick="tic.asignaCasilla(cas9, 9)"></td>
+            </tr>
+        
+        </table>
+      </div>
+      <div id= "otraCosa">
+          <h1><p id='texto'></p></h1>
+          <button id='boton' onclick="iniciar()">Iniciar</button> 
+      </div>
+        <style type="text/css">
+            #tabla{
+                margin :auto;
+            }
+            #tabla td{
+                border: solid;
+                width: 200px;
+                height: 200px;
+                cursor: pointer;
+                text-align: center;
+            }
+            #otraCosa{
+                align-items: center;
+                justify-content: center;
+            }
+            #boton{
+                margin-left: 48%;
+                font-size: 25px;
+                cursor: pointer;
+                background-color: darkgreen;
+            }
+            #texto{
+                text-align: center;
+            }
+        </style>
   </body>
      
 
